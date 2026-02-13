@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nadav Schneider - Homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-section: #f8f9fa;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-dim: #666666;
+  --accent: #2563eb;
+  --accent2: #7c3aed;
+  --accent3: #10b981;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+::selection { background: var(--accent); color: white; }
+
+/* --- HERO --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 10px 40px var(--shadow);
+  flex-shrink: 0;
+}
+
+.hero-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-bio {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.hero-bio a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+  transition: border-color 0.3s;
+}
+.hero-bio a:hover { border-color: var(--accent); }
+
+.hero-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s;
+  background: var(--bg);
+  font-weight: 500;
+}
+.hero-links a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.hero-links a svg { width: 16px; height: 16px; }
+
+/* --- SECTIONS --- */
+.section {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+/* --- RESEARCH AREAS --- */
+.research-intro {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 900px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.research-card {
+  padding: 32px 28px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.research-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+}
+
+.research-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.research-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.research-card p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* --- PUBLICATIONS --- */
+.pub-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 32px 0 20px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.pub-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-item:last-child { border-bottom: none; }
+
+.pub-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.pub-title a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.pub-title a:hover { color: var(--accent2); }
+
+.pub-authors {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.pub-authors strong { color: var(--text); font-weight: 600; }
+
+.pub-venue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.pub-venue.preprint { color: var(--accent3); }
+
+.outstanding-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1a1a1a;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- EXPERIENCE --- */
+.exp-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding: 24px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.exp-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+}
+
+.exp-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.exp-role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.exp-org {
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* --- AWARDS --- */
+.awards-list {
+  display: grid;
+  gap: 20px;
+}
+
+.award-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.award-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+}
+
+.award-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.award-text {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.award-text strong { color: var(--text); font-weight: 600; }
+
+/* --- MEDIA --- */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.media-card {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.media-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+}
+
+.media-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--bg-section);
+}
+
+.media-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.media-body {
+  padding: 24px;
+}
+
+.media-body h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.media-body p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* --- TEACHING --- */
+.teaching-list {
+  display: grid;
+  gap: 16px;
+}
+
+.teaching-item {
+  padding: 20px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.teaching-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+}
+
+.teaching-course {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.teaching-semester {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+/* --- NEWS --- */
+.news-list {
+  display: grid;
+  gap: 16px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 16px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-card);
+  transition: all 0.3s;
+}
+
+.news-item:hover {
+  background: var(--bg-section);
+  padding-left: 20px;
+}
+
+.news-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.news-text {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.news-text a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+  transition: border-color 0.3s;
+}
+.news-text a:hover { border-color: var(--accent); }
+
+/* --- CONTACT --- */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s;
+  background: var(--bg);
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.contact-link svg { width: 18px; height: 18px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-photo {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .hero-links {
+    justify-content: center;
+  }
+  
+  .exp-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .hero {
+    padding: 40px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-label">AI Researcher</div>
+      <h1>Nadav <span>Schneider</span></h1>
+      <div class="hero-bio">
+        I'm a Ph.D candidate in the Department of Electrical & Computer Engineering at Ben-Gurion University of the Negev. Supervised by Dr. Eliya Nachmani.
+      </div>
+      <div class="hero-links">
+        <a href="#publications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z"/></svg>
+          Publications
+        </a>
+        <a href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </a>
+      </div>
+    </div>
+    <img src="profile.jpg" alt="Nadav Schneider" class="hero-photo">
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESEARCH -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Research Interests</div>
+    <h2 class="section-title">Research</h2>
+  </div>
+  <div class="research-intro">
+    My research focuses on modern deep learning with an emphasis on improving the capabilities of generative models in language modeling and computer vision. I am passionate about developing architectures and understanding their design principles, especially transformers, diffusion models, and modern SSMs.
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PUBLICATIONS -->
+<section class="section" id="publications">
+  <div class="section-header">
+    <div class="section-tag">Selected Works</div>
+    <h2 class="section-title">Publications</h2>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://aclanthology.org/2025.ijcnlp-long.138.pdf" target="_blank">Differential Mamba</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, I. Zimerman, E. Nachmani</div>
+    <div class="pub-venue">AACL, 2025</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_19.pdf" target="_blank">CLARIPHY: Physics-Informed Image Deblurring with Transformers for Hydrodynamic Instability Analysis</a></div>
+    <div class="pub-authors">S. Stamler-Grossman*, <strong>N. Schneider*</strong>, G. Hanoch, G. Oren (* equal contribution)</div>
+    <div class="pub-venue">ML4PS, NeurIPS 2024</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2402.09126" target="_blank">MPIrigen: MPI Code Generation through Domain-Specific Language Models</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, N. Hasabnis, VA. Vo, T. Kadosh, N. Krien, M. Capota, G. Tamir, Y. Pinter, G. Oren</div>
+    <div class="pub-venue">AI4Sys, 2024</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title">
+      <a href="https://arxiv.org/pdf/2312.13322" target="_blank">MonoCoder: Domain-Specific Code Language Model for HPC Codes and Tasks</a>
+      <span class="outstanding-badge">Outstanding Paper Award</span>
+    </div>
+    <div class="pub-authors">T. Kadosh, N. Hasabnis, VA. Vo, <strong>N. Schneider</strong>, N. Krien, M. Capotă, A. Wasay, N. Ahmed, T. Willke, G. Tamir, Y. Pinter, T. Mattson, G. Oren</div>
+    <div class="pub-venue">HPEC, 2024</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2308.08206" target="_blank">Explainable Deep Multi-View Methodology for HEDP Foam Quality Assessment</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, M. Tzdaka, G. Strum, G. Lazovski, G. Bar, R. Gvishi, G. Oren</div>
+    <div class="pub-venue">AI for Accelerated Materials Design, 2024</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2403.14273" target="_blank">Reactor Optimization Benchmark by Reinforced Learning</a></div>
+    <div class="pub-authors">D. Schwarcz, <strong>N. Schneider</strong>, G. Oren, U. Steinitz</div>
+    <div class="pub-venue">EPJ Web of Conferences 302, 2024</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2305.09438" target="_blank">MPI-rical: Data-Driven MPI Distributed Parallelism Assistance with Transformers</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, T. Kadosh, N. Hasabnis, T. Mattson, Y. Pinter, G. Oren</div>
+    <div class="pub-venue">AI4Dev, SC, 2023</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2305.11999" target="_blank">Advising OpenMP Parallelization via a Graph-Based Approach with Transformers</a></div>
+    <div class="pub-authors">T. Kadosh, <strong>N. Schneider</strong>, N. Hasabnis, T. Mattson, Y. Pinter, G. Oren</div>
+    <div class="pub-venue">International Workshop on OpenMP, 2023</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2304.01179" target="_blank">Hate Speech Targets Detection in Parler using BERT</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, S. Shouei, S. Ghantous, E. Feldman</div>
+    <div class="pub-venue preprint">preprint, 2023</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title"><a href="https://arxiv.org/pdf/2208.07196" target="_blank">Determining HEDP Foams' Quality with Multi-View Deep Learning Classification</a></div>
+    <div class="pub-authors"><strong>N. Schneider</strong>, M. Rusanovsky, R. Gvishi, G. Oren</div>
+    <div class="pub-venue">AI4S, SC, 2022</div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- AWARDS -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Recognition</div>
+    <h2 class="section-title">Awards & Honors</h2>
+  </div>
+  <div class="awards-list">
+    <div class="award-item">
+      <div class="award-icon">🏆</div>
+      <div class="award-text"><strong>Outstanding Paper Award</strong> — MonoCoder: Domain-Specific Code Language Model for HPC Codes and Tasks, HPEC 2024</div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon">🎓</div>
+      <div class="award-text"><strong>Intel OneAPI Excellence Student Ambassador, 2023</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MEDIA -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">In the Spotlight</div>
+    <h2 class="section-title">Media</h2>
+  </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <div class="media-img">
+        <img src="Screenshot_20250710_163449_X.PNG" alt="Diff-Mamba Post by Tri Dao">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TEACHING -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Academia</div>
+    <h2 class="section-title">Teaching</h2>
+  </div>
+  <div class="teaching-list">
+    <div class="teaching-item">
+      <div class="teaching-course">Shared Memory Parallelism: CPUs, GPUs and In-Between — TA, 2023</div>
+      <div class="teaching-semester">Tel Aviv University</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact" style="text-align:center;">
+  <div class="section-header" style="text-align:center;">
+    <div class="section-tag">Get in Touch</div>
+    <h2 class="section-title">Contact</h2>
+  </div>
+  <div class="contact-grid">
+    <a href="mailto:nadavsc@post.bgu.ac.il" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+    <a href="https://scholar.google.com/citations?user=CrBv6b4AAAAJ" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z"/></svg>
+      Google Scholar
+    </a>
+    <a href="https://github.com/NadavSc" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/nadav-schneider-63505a197/" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<div style="height: 80px;"></div>
+
+</body>
+</html>
